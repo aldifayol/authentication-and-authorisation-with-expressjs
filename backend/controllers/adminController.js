@@ -140,6 +140,8 @@ const delete_user_by_username = async (req, res) => {
             }
         })
 
+        console.log(res.status(200).json().message)
+
         return res.status(200).json({ message: "User Deleted", ok: true, })
 
     } catch (error) {

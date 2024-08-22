@@ -61,7 +61,8 @@
             });
             const result = await response.json();
             if (result.ok) {
-                alert('User updated successfully');
+                // alert('User updated successfully');
+                window.location.href = './dashboard.html'
                 return;
             }else{
                 alert('User update failed');

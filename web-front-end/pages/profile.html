@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <nav>
+        <a class="nav-style" onclick="logout()" href="./index.html" >Logout</a>
+    </nav>
     <h1>User Profile</h1>
     <form id="profile-form">
         <label for="username">Username:</label>
@@ -56,6 +59,7 @@
             // handle response
             if (result.ok) {
                 alert('Profile updated successfully');
+                
                 return;
             }else{
                 alert(result.message);
@@ -63,6 +67,15 @@
         });
 
         loadUserProfile();
+    </script>
+
+    <script>
+        async function logout() {
+            const response = await fetch('https://musical-garbanzo-44rwqxjrr73j94j-4001.app.github.dev/auth/logout',{
+                credentials:"include"
+            });
+            console.log("succesfully logout")
+        }
     </script>
 </body>
 

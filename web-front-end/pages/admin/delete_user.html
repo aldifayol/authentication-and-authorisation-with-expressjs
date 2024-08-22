@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="../../styles/styles.css">
 </head>
 <body>
-    <h1>Delete User</h1>
+    <h1>Confirmation Of Deletion</h1>
     <form id="user-form">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" disabled>
         <br>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" disabled>
         <br>
         <label for="contact_number">Contact Number:</label>
-        <input type="tel" id="contact_number" name="contact_number" required>
+        <input type="tel" id="contact_number" name="contact_number" disabled>
         <br>
         <label for="account_type">Account Type:</label>
-        <select id="account_type" name="account_type">
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-        </select>
+        <input type="text" id="account_type" name="account_type" disabled>
 
-        <button class="danger" type="submit">Delete User</button>
+        <button class="danger" type="submit">DELETE</button>
+        <label for=""></label>
+        <label for="confirmation" class="text-danger">Are You Sure?</label>
+        <label for="confirmation" class="text-danger">This Action Cannot Be Undone.</label>
     </form>
 
     <script>
@@ -52,7 +52,7 @@
             const email = document.getElementById('email').value;
             const contact_number = document.getElementById('contact_number').value;
             const account_type = document.getElementById('account_type').value;
-            const response = await fetch(`https://musical-garbanzo-44rwqxjrr73j94j-4001.app.github.dev/admin/user/id/${userId}`, {
+            const response = await fetch(`https://musical-garbanzo-44rwqxjrr73j94j-4001.app.github.dev/admin/delete/user/${userId}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, contact_number, account_type }),
