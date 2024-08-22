@@ -109,7 +109,7 @@ const load_user_profile_by_id = async (req, res) => {
 
 const delete_user_by_username = async (req, res) => {
     try {
-        let user_id = await get_user_id(req) // Get user id from JWT token by the helper function
+        let user_id = req.params.user_id
         if (!user_id) {
             return res.status(400).json({ message: "Invalid Request", ok: false, })
         }
@@ -139,8 +139,6 @@ const delete_user_by_username = async (req, res) => {
                 username: username
             }
         })
-
-        console.log(res.status(200).json().message)
 
         return res.status(200).json({ message: "User Deleted", ok: true, })
 

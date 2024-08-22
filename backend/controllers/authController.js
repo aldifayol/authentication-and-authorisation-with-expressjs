@@ -44,7 +44,8 @@ const login = async (req, res) => {
         return res.status(200).json({
             ok: true,
             message: "Login Successful",
-            is_admin: user.account_type === "admin" ? true : false
+            is_admin: user.account_type === "admin" ? true : false,
+            token: token
         })
 
 

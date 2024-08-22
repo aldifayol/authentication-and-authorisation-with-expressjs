@@ -57,13 +57,12 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, contact_number, account_type }),
                 credentials:"include"
-
             });
             const result = await response.json();
             if (result.ok) {
                 alert('User Deleted successfully');
                 return;
-            }else{
+            } else {
                 alert('User Deletion failed');
             }
             // handle response
@@ -73,7 +72,7 @@
         const userId = urlParams.get('user_id');
         if (userId) {
             loadUser(userId);
-        }else{
+        } else{
             alert('User ID not provided');
             window.location.href = './dashboard.html';
         }

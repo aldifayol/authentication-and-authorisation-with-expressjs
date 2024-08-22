@@ -64,7 +64,7 @@
                 // alert('User updated successfully');
                 window.location.href = './dashboard.html'
                 return;
-            }else{
+            } else {
                 alert('User update failed');
             }
             // handle response
@@ -74,7 +74,7 @@
         const userId = urlParams.get('user_id');
         if (userId) {
             loadUser(userId);
-        }else{
+        } else {
             alert('User ID not provided');
             window.location.href = './dashboard.html';
         }
